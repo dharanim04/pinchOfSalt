@@ -1,11 +1,47 @@
+body, h1{
+  font-family: Ubuntu, sans-serif;;
+}
 .imglogo {
   width: 4em;
   height: 3em;
 }
- .carousel .carousel-item {
-    height: 500px;
-    object-position: center;
-  }
+.carousel .carousel-item {
+  height: 500px;
+  object-position: center;
+  /* position: relative; */
+}
 .styWelcome{
-    
+  font-size: 1.7rem;
+  
+  text-shadow: 5px 5px 5px rgba(22, 20, 19, 0.589);
+  text-align: end;
+}
+.styForm {
+  box-shadow: 5px 5px 10px rgba(22, 20, 19, 0.589);
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  top: 20%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  font-family: "Sofia", sans-serif;
+}
+.carousel-caption > p {
+  font-size: 5rem;
+  text-shadow: 5px 5px 5px rgba(22, 20, 19, 0.589);
+}
+.stylLogo {
+  font-size: 1.5rem;
+  font-family: "Sofia", sans-serif;
+  text-shadow: 5px 5px 5px rgba(22, 20, 19, 0.589);
+}
+.stylFooter{
+  color: #fff;
+  background-color: black;
 }

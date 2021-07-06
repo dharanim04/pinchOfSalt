@@ -1,5 +1,5 @@
 const createRecipeHtml = (id, name, ingredients) => {
-  const html = `<li class="card" data-recipe-id="${id}" style="min-width: 30vw">
+  const html = `<li class="card styForm m-1" data-recipe-id="${id}" id="idlst${id}" style="min-width: 30vw">
   <div class="card-body">
     <h5 class="card-title">${name}</h5>
     <p class="card-text">Ingredients:

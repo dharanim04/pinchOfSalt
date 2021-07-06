@@ -66,23 +66,37 @@ form.addEventListener("submit", (event) => {
 });
 
 
+
+
+//delete action
 const recipeList = document.querySelector("#recipelist");
 // Add an 'onclick' event listener to the Tasks List
 recipeList.addEventListener("click", (event) => {
 
-  // Check if a "Delete" button was clicked
+
+
+     // Check if a "Delete" button was clicked
   if (event.target.classList.contains("delete-button")) {
+
     // Get the parent Task
-    const parentTask =
-      event.target.parentElement.parentElement.parentElement;
+ 
+  const parentTask =
+  event.target.parentElement.parentElement.parentElement;
+  console.log('parent task');
 console.log(parentTask);
-    // Get the taskId of the parent Task.
-    const recipeId = Number(parentTask.dataset.recipeId);
-    console.log(parentTask.dataset);
-    console.log('recipe id');
+
+
+// Get the taskId of the parent Task.
+const recipeId = Number(parentTask.dataset.recipeId);
+console.log(parentTask.dataset);
+console.log('recipe id');
 console.log(recipeId);
-console.log('recipe ingredients');
-console.log(parentTask.dataset.recipeIngredients);
+let idlstItem= 'idlst'+ recipeId;
+let element = document.getElementById(idlstItem);
+console.log('element');
+console.log(element);
+element.classList.add('lstDeleteStyle');
+
     // Delete the task
     recipeManager.deleteTask(recipeId);
 
@@ -92,6 +106,10 @@ console.log(parentTask.dataset.recipeIngredients);
     // Render the tasks
     recipeManager.render();
   }
+    
+  
+ 
+ 
 });
 
 const namecustomer=prompt('Enter your name');
@@ -101,5 +119,4 @@ if(namecustomer !==null && namecustomer !==''){
 document.getElementById("idWelcomeMsg").innerHTML=`Welcome ${namecustomer} `;
 } else{
   document.getElementById("idWelcomeMsg").innerHTML=`Welcome to pinch of Salt `;
- 
 }
