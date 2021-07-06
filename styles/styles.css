@@ -1,25 +1,41 @@
+/* set body font  */
 body, h1{
   font-family: Ubuntu, sans-serif;;
 }
-.imglogo {
+/* .imglogo {
   width: 4em;
   height: 3em;
+} */
+/* logo styles  */
+.stylLogo {
+  font-size: 1.5rem;
+  font-family: "Sofia", sans-serif;
+  text-shadow: 5px 5px 5px rgba(22, 20, 19, 0.589);
 }
-.carousel .carousel-item {
-  height: 500px;
-  object-position: center;
-  /* position: relative; */
-}
+/* welcome msg style  */
 .styWelcome{
   font-size: 1.7rem;
-  
   text-shadow: 5px 5px 5px rgba(22, 20, 19, 0.589);
   text-align: end;
 }
+/* set height of the slides  */
+.carousel .carousel-item {
+  height: 500px;
+  object-position: center;
+}
+/* style of the recipes displayed  */
 .styForm {
   box-shadow: 5px 5px 10px rgba(22, 20, 19, 0.589);
 }
+/* animate the delete operation  using card and lstDeleteStyle */
+.card{
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+.lstDeleteStyle{
+   transform: scaleY(0.1) rotate(180deg) scaleX(0.1);
+}
 
+/* set words on the carousel slides */
 .carousel-caption {
   position: absolute;
   right: 15%;
@@ -36,11 +52,7 @@ body, h1{
   font-size: 5rem;
   text-shadow: 5px 5px 5px rgba(22, 20, 19, 0.589);
 }
-.stylLogo {
-  font-size: 1.5rem;
-  font-family: "Sofia", sans-serif;
-  text-shadow: 5px 5px 5px rgba(22, 20, 19, 0.589);
-}
+/* footer  */
 .stylFooter{
   color: #fff;
   background-color: black;
