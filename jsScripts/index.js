@@ -100,7 +100,7 @@ const namecustomer = prompt("Enter your name");
 if (namecustomer !== null && namecustomer !== "") {
   document.getElementById(
     "idWelcomeMsg"
-  ).innerHTML = `Welcome ${namecustomer}.dddd `;
+  ).innerHTML = `Welcome ${namecustomer}.`;
 } else {
   document.getElementById(
     "idWelcomeMsg"
