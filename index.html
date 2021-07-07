@@ -136,11 +136,11 @@
           <div class="col-5">
             <!-- recipe app starts here  -->
             <div class="d-flex justify-content-center">
-              <div>
+              <div class="col-8">
                 <div class="row">
                   <h3>Add your recipe</h3>
                 </div>
-                <div class="row mb-5 p-2 border rounded styForm">
+                <div class="row mb-5 p-3 border rounded styForm">
                   <div class="col">
                     <form id="newrecipeform">
                       <div class="row mb-4">
@@ -175,6 +175,41 @@
                           <div class="invalid-feedback">
                             <div class="valid-feedback">Looks good!</div>
                             Please provide a valid description
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-4">
+                        <div class="col">
+                          <label for="noOfserves" class="form-label"
+                            >No. of Serves</label
+                          >
+                          <input
+                            id="noOfserves"
+                            class="form-control"
+                            required
+                          ></input>
+
+                          <div class="invalid-feedback">
+                            <div class="valid-feedback">Looks good!</div>
+                            Please provide a number
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-4">
+                        <div class="col">
+                          <label for="cookingTime" class="form-label"
+                            >Cooking time:</label
+                          >
+                          <input
+                            id="cookingTime"
+                            class="form-control"
+                            required
+                          ></input>
+                          
+
+                          <div class="invalid-feedback">
+                            <div class="valid-feedback">Looks good!</div>
+                            Please provide a input
                           </div>
                         </div>
                       </div>

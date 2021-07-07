@@ -1,4 +1,4 @@
-const createRecipeHtml = (id, name, ingredients) => {
+const createRecipeHtml = (id, name, ingredients,noOfServes,cookingTime) => {
   //   const html = `<li class="card styForm m-1" data-recipe-id="${id}" id="idlst${id}" style="min-width: 30vw">
   //   <div class="card-body">
   //     <h5 class="card-title">${name}</h5>
@@ -26,6 +26,8 @@ const createRecipeHtml = (id, name, ingredients) => {
     <div id="collapse${id}" class="collapse" aria-labelledby="heading${id}" data-parent="#recipelist" >
       <div class="card-body">
       <p class="card-text">Ingredients:${ingredients}</p>
+      <p class="card-text">noOfServes:${noOfServes}</p>
+      <p class="card-text">cookingTime:${cookingTime}</p>
       </div>
       <div class="card-footer d-flex justify-content-end">
       <button class="btn btn-outline-danger delete-button ">Delete</button>
@@ -43,24 +45,30 @@ class RecipeManager {
         id: 0,
         name: "Cakes",
         ingredients: "Sugar 1Cup, Flour 1Cup, Butter 1/4Cup, 1tsp Baking Powder, A dash of salt",
+        noOfServes: 6,
+        cookingTime: "40mins",
       },
       {
         id: 1,
         name: "Bread",
         ingredients: "Flour 1Cup, Yeast 1tsp, Butter 2Tbsp, Sugar 2Tbsp, Salt 1tsp",
+        noOfServes: 10,
+        cookingTime: "30mins",
       },
     ];
     this.curntRecipeId = curntRecipeId;
   }
 
   //addrecipes
-  addreipe(name, ingredients) {
+  addreipe(name, ingredients, noOfServes, cookingTime) {
     // Create a recipe object that we will push to the list of recipes
     const recipe = {
       // Increment the current recipe Id for each new recipe
       id: this.curntRecipeId++,
       name: name,
       ingredients: ingredients,
+      noOfServes: noOfServes,
+      cookingTime: cookingTime,
     };
     this.recipes.push(recipe);
   }
@@ -97,7 +105,9 @@ class RecipeManager {
       const recipeHtml = createRecipeHtml(
         recipe.id,
         recipe.name,
-        recipe.ingredients
+        recipe.ingredients,
+        recipe.noOfServes,
+        recipe.cookingTime
       );
       // Push it to the recipesHtmlList array
       recipeHtmlList.push(recipeHtml);

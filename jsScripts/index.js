@@ -10,6 +10,8 @@ form.addEventListener("submit", (event) => {
   // Select the inputs
   let validateName = document.querySelector("#newrecipename");
   let validateIngredients = document.querySelector("#newrecipeingredients");
+  let validateServes = document.querySelector("#noOfserves");
+  let validateTime = document.querySelector("#cookingTime");
 
   let validationFail = 0;
 
@@ -18,13 +20,17 @@ form.addEventListener("submit", (event) => {
 
   // Call this to clear all the form fields after the submission
   const clearFormFields = () => {
-    validateName.value = "";
-    validateIngredients.value = "";
-    validateName.classList.remove("is-valid");
-    validateIngredients.classList.remove("is-valid");
+    const formValues = document.querySelectorAll(".form-control");
+    //looping all class with form-control to clear form
+    formValues.forEach(element => {
+      element.value="";
+      element.classList.remove("is-invalid");
+      element.classList.remove("is-valid");
+    });
+   
   };
   // Form validation for Task Name Field for min length 2
-  if (validateName.value.length > 2) {
+  if (validateName.value.trim() !=='' && (validateName.value.length > 2)) {
     validateName.classList.add("is-valid");
     validateName.classList.remove("is-invalid");
   } else {
@@ -33,7 +39,7 @@ form.addEventListener("submit", (event) => {
     validationFail++;
   }
   // Form validation for Task Description Field for min length 8
-  if (validateIngredients.value.length > 8) {
+  if (validateIngredients.value.trim() !=='' && (validateIngredients.value.length > 8)) {
     validateIngredients.classList.add("is-valid");
     validateIngredients.classList.remove("is-invalid");
   } else {
@@ -41,6 +47,26 @@ form.addEventListener("submit", (event) => {
     validateIngredients.classList.remove("is-valid");
     validationFail++;
   }
+  //validate no. of server
+  if (validateServes.value.trim() !=='' && Number(validateServes.value )>1) {
+    validateServes.classList.add("is-valid");
+    validateServes.classList.remove("is-invalid");
+  } else {
+    validateServes.classList.add("is-invalid");
+    validateServes.classList.remove("is-valid");
+    validationFail++;
+  }
+  //validate time
+  if (validateTime.value.trim() !=='' && (validateTime.value.length >= 1)) {
+    validateTime.classList.add("is-valid");
+    validateTime.classList.remove("is-invalid");
+  } else {
+    validateTime.classList.add("is-invalid");
+    validateTime.classList.remove("is-valid");
+    validationFail++;
+  }
+
+
   // If validation fails then function will not proceed further and
   // will return. The value of validationFail will also needed to be
   // reset to 0.
@@ -50,7 +76,7 @@ form.addEventListener("submit", (event) => {
     return;
   } else {
     // Push the valid input into our tasks array
-    recipeManager.addreipe(validateName.value, validateIngredients.value);
+    recipeManager.addreipe(validateName.value, validateIngredients.value, validateServes.value, validateTime.value );
     clearFormFields();
     recipeManager.save();
     recipeManager.render();
